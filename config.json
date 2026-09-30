@@ -1,0 +1,101 @@
+{
+  "clip": {
+    "class_name": "VanillaCLIP",
+    "model_name": "vitl14",
+    "model_dir": "/models/openai/CLIP/ViT-L-14.pt",
+    "loss_type": "cos_sim",
+    "preprocess": {
+      "resize_size": 224,
+      "crop_size": 224,
+      "interpolation_mode": "bicubic",
+      "norm_mean": [0.48145466, 0.4578275, 0.40821073],
+      "norm_std": [0.26862954, 0.26130258, 0.27577711],
+      "augment_prob": 0.7,
+      "augment_mode": "none"
+    }
+  },
+  "robust_clip": {
+    "class_name": "RobustCLIP",
+    "model_name": "fare4_vitb16",
+    "model_dir": "local-dir:/models/chs20/FARE4-ViT-B-16-laion2B-s34B-b88K",
+    "loss_type": "cos_sim",
+    "preprocess": {
+      "resize_size": 224,
+      "crop_size": 224,
+      "interpolation_mode": "bicubic",
+      "norm_mean": [0.48145466, 0.4578275, 0.40821073],
+      "norm_std": [0.26862954, 0.26130258, 0.27577711],
+      "augment_prob": 0.7,
+      "augment_mode": "full"
+    }
+  },
+  "csd_clip": {
+    "class_name": "CSD_CLIP",
+    "base_model_name": "vitl",
+    "base_model_dir": "/models/openai/CLIP/ViT-L-14.pt",
+    "content_proj_head": "default",
+    "model_dir": "/models/learn2phoenix/CSD/CSD-ViT-L-checkpoint.pth",
+    "loss_type": "cos_sim",
+    "preprocess": {
+      "resize_size": 224,
+      "crop_size": 224,
+      "interpolation_mode": "bicubic",
+      "norm_mean": [0.48145466, 0.4578275, 0.40821073],
+      "norm_std": [0.26862954, 0.26130258, 0.27577711],
+      "augment_prob": 0.7,
+      "augment_mode": "full"
+    }
+  },
+  "dino": {
+    "class_name": "DINO",
+    "model_name": "dinov3_vitl16",
+    "model_dir": "/models/facebook/dinov3-vitl16-pretrain-lvd1689m/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth",
+    "repo_dir": "local:/models/facebookresearch/dinov3",
+    "loss_type": "cos_sim",
+    "preprocess": {
+      "resize_size": 256,
+      "crop_size": 224,
+      "interpolation_mode": "bilinear",
+      "norm_mean": [0.485, 0.456, 0.406],
+      "norm_std": [0.229, 0.224, 0.225],
+      "augment_prob": 0.7,
+      "augment_mode": "full"
+    }
+  },
+  "vgg": {
+    "class_name": "VGG",
+    "model_name": "vgg19",
+    "style_weight": 250,
+    "loss_type": "gram",
+    "preprocess": {
+      "resize_size": 256,
+      "crop_size": 224,
+      "interpolation_mode": "bilinear",
+      "norm_mean": [0.485, 0.456, 0.406],
+      "norm_std": [0.229, 0.224, 0.225],
+      "augment_prob": 0.7,
+      "augment_mode": "full"
+    }
+  },
+  "inception": {
+    "class_name": "Inception",
+    "model_name": "inceptionv3",
+    "loss_type": "cos_sim",
+    "preprocess": {
+      "resize_size": 342,
+      "crop_size": 299,
+      "interpolation_mode": "bilinear",
+      "norm_mean": [0.485, 0.456, 0.406],
+      "norm_std": [0.229, 0.224, 0.225],
+      "augment_prob": 0.7,
+      "augment_mode": "full"
+    }
+  },
+  "sdxl": {
+    "class_name": "SDXL",
+    "model_name": "sdxlv1.0",
+    "model_dir": "/models/stabilityai/stable-diffusion-xl-base-1.0",
+    "ip_adapter_name": "ip-adapter_sdxl",
+    "ip_adapter_dir": "/models/h94/IP-Adapter"
+  }
+}
